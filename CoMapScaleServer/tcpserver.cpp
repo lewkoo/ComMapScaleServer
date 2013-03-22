@@ -160,6 +160,7 @@ void TcpServer::updateClientDisconnect(QString senderId)
 void TcpServer::updateClients(QString senderId)
 {
     QGeoCoordinate clientPos, vwPos;
+    int clientScale;
     QString text;
     QString vwText;
     ClientState* clientState;
@@ -173,9 +174,11 @@ void TcpServer::updateClients(QString senderId)
         {
             clientState = client->getClientState();
             clientPos = clientState->getLastPosition();
+            clientScale = clientState->getVwZoomLevel();
 
             text = tr("id:%1,").arg(client->getClientId());
             text += tr("lat:%1,").arg(clientPos.latitude(), 0, 'f', 5) + tr("lon:%1,").arg(clientPos.longitude(), 0, 'f', 5);
+            text += tr("scale:%1,").arg(clientScale);
 
             break;
         }
