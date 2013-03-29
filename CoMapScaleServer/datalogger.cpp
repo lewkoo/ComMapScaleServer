@@ -54,6 +54,20 @@ void DataLogger::createFiles()
     }
 
     vwFileOut.setDevice(&vwFile);
+
+
+    fileName = folder.path() + "\\Click_Log-Client_" + clientId + "_" + QDateTime::currentDateTime().toString() + ".txt";
+    fileName.replace(QChar(':'), QChar(' '), Qt::CaseInsensitive); //Windows does not support : in file name
+    clickFile.setFileName(fileName);
+
+
+    if (!clickFile.open(QIODevice::WriteOnly))
+    {
+        qDebug() << "Can't open file " + fileName;
+    }
+
+    clickFileOut.setDevice(&clickFile);
+
 }
 
 void DataLogger::writePos(QString time, QString lat, QString lon, QString topLeftLat, QString topLeftLon, QString botRightLat, QString botRightLon, QString scale)
@@ -66,6 +80,12 @@ void DataLogger::writeVw(QString time, QString lat, QString lon, QString topLeft
 {
     QString text = time + DELIM + lat + DELIM + lon + DELIM + topLeftLat + DELIM + topLeftLon + DELIM + botRightLat + DELIM + botRightLon + DELIM + scale;
     vwFileOut << text << endl;
+}
+
+void DataLogger::writeClick(QString time, QString iconType){
+    QString text = time + DELIM + iconType;
+    clickFileOut << text << endl;
+
 }
 
 void DataLogger::closeFiles()
