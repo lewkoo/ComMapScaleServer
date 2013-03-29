@@ -28,9 +28,13 @@ void DataLogger::createFiles()
         }
     }
 
+   //QDir::setCurrent("\\" + DataLogger::LOG_PATH);
+
     //Create file to log positions
-    fileName = folder.path() + "/Pos_Log-Client_" + clientId + "_" + QDateTime::currentDateTime().toString() + ".txt";
+    fileName = folder.path() + "\\Pos_Log-Client_" + clientId + "_" + QDateTime::currentDateTime().toString() + ".txt";
+    fileName.replace(QChar(':'), QChar(' '), Qt::CaseInsensitive); //Windows does not support : in file name
     posFile.setFileName(fileName);
+
 
     if (!posFile.open(QIODevice::WriteOnly))
     {
@@ -40,7 +44,8 @@ void DataLogger::createFiles()
     posFileOut.setDevice(&posFile);
 
     //Create file to log visit wears
-    fileName = folder.path() + "/Vw_Log-Client_" + clientId + "_" + QDateTime::currentDateTime().toString() + ".txt";
+    fileName = folder.path() + "\\Vw_Log-Client_" + clientId + "_" + QDateTime::currentDateTime().toString() + ".txt";
+    fileName.replace(QChar(':'), QChar(' '), Qt::CaseInsensitive); //Windows does not support : in file name
     vwFile.setFileName(fileName);
 
     if (!vwFile.open(QIODevice::WriteOnly))

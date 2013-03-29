@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->btnConnect, SIGNAL(clicked()), this, SLOT(startServer()));
     connect(ui->btnDisconnect, SIGNAL(clicked()), this, SLOT(stopServer()));
-    connect(ui->btnQuit, SIGNAL(clicked()), this, SLOT(close()));
+    connect(ui->btnQuit, SIGNAL(clicked()), this, SLOT(closeWindow()));
     connect(ui->btnLoad, SIGNAL(clicked()), this, SLOT(loadIcons()));
     connect(ui->btnClear, SIGNAL(clicked()), this, SLOT(clearMapObjects()));
     connect(ui->chkWedge, SIGNAL(stateChanged(int)), this, SLOT(wedgeStateChanged(int)));
@@ -160,5 +160,12 @@ void MainWindow::wedgeStateChanged(int state)
 void MainWindow::objWedgeStateChanged(int state)
 {
     server->setWedgeEnabled(ui->chkWedge->checkState(), ui->chkObjWedge->checkState());
+}
+
+void MainWindow::closeWindow(){
+
+    stopServer();
+    close();
+
 }
 

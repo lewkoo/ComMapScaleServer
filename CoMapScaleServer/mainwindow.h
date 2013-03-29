@@ -32,6 +32,7 @@ private slots:
     void wedgeStateChanged(int state);
     void objWedgeStateChanged(int state);
     void vwStateChanged(int state);
+    void closeWindow();
 
 private:
     Ui::MainWindow *ui;
