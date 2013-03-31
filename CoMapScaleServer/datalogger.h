@@ -26,6 +26,7 @@ public:
     void closeFiles ();
     void writePos (QString time, QString lat, QString lon, QString topLeftLat, QString topLeftLon, QString botRightLat, QString botRightLon, QString scale);
     void writeVw (QString time, QString lat, QString lon, QString topLeftLat, QString topLeftLon, QString botRightLat, QString botRightLon, QString scale);
+    void writeClick(QString time, QString lat, QString lon, QString topLeftLat, QString topLeftLon, QString botRightLat, QString botRightLon, QString scale, QString iconType);
     void writeClick(QString time, QString iconType );
 
 private:

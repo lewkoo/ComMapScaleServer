@@ -82,6 +82,11 @@ void DataLogger::writeVw(QString time, QString lat, QString lon, QString topLeft
     vwFileOut << text << endl;
 }
 
+void DataLogger::writeClick(QString time, QString lat, QString lon, QString topLeftLat, QString topLeftLon, QString botRightLat, QString botRightLon, QString scale, QString iconType){
+    QString text = time + DELIM + lat + DELIM + lon + DELIM + topLeftLat + DELIM + topLeftLon + DELIM + botRightLat + DELIM + botRightLon + DELIM + scale + DELIM + iconType;
+    clickFileOut << text << endl;
+}
+
 void DataLogger::writeClick(QString time, QString iconType){
     QString text = time + DELIM + iconType;
     clickFileOut << text << endl;

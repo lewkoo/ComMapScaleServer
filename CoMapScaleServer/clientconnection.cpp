@@ -225,8 +225,9 @@ void ClientConnection::parseMessage(QString message)
 
         //Write if any click info received
 
-        if(clickInfo != NULL){
-            logger->writeClick(time.toString("hh:mm:ss,zzz"), clickInfo);
+        if(clickInfo != NULL && (lat != 0 || lon != 0 || scale != 0)){
+            logger->writeClick(time.toString("hh:mm:ss.zzz"), QString::number(lat), QString::number(lon), QString::number(topLeftLat), QString::number(topLeftLon),
+                               QString::number(botRightLat), QString::number(botRightLon), QString::number(scale),clickInfo);
         }
 
 
