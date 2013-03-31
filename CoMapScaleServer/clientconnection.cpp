@@ -96,6 +96,8 @@ void ClientConnection::parseMessage(QString message)
     float botRightLat = 0;
     float botRightLon = 0;
     qreal scale = 0;
+    QString clickInfo = NULL;
+
 
     for (int i = 0; i < elements.size(); i++)
     {
@@ -187,6 +189,9 @@ void ClientConnection::parseMessage(QString message)
                 qDebug() << "Problem parsing scale";
             }
 
+        }else if (pair.startsWith("click"))//icon click
+        {
+            clickInfo = pair.remove(0,6);
         }
         else
             qDebug() << "Unrecognized message element: " << pair;
@@ -215,6 +220,13 @@ void ClientConnection::parseMessage(QString message)
 
             logger->writePos(time.toString("hh:mm:ss.zzz"), QString::number(lat), QString::number(lon), QString::number(topLeftLat), QString::number(topLeftLon),
                           QString::number(botRightLat), QString::number(botRightLon), QString::number(scale));
+        }
+
+
+        //Write if any click info received
+
+        if(clickInfo != NULL){
+            logger->writeClick(time.toString("hh:mm:ss,zzz"), clickInfo);
         }
 
 
