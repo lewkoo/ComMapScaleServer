@@ -26,6 +26,10 @@ public:
     void removeClient(ClientConnection* client);
     void setVwEnabled(bool isEnabled);
     void setWedgeEnabled(bool isEnabled, bool objWedgeEnabled);
+    void setGlobalButtonEnabled(bool isEnabled);
+    void setWedgeIcons(bool isEnabled);
+    void setWedgeIconPresses(bool isEnabled);
+    void setStatusSlider(bool isEnabled);
 
 signals:
 

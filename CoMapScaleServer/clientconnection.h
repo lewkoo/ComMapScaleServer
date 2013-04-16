@@ -28,6 +28,10 @@ public:
     void logVw(QGeoCoordinate position, QGeoBoundingBox viewportBounds, qreal scale);
     void sendMapObjects(QList<QGeoMapObject*> mapObjects);
     void sendWedgeStatus(bool isEnabled, bool objWedgeEnabled);
+    void sendGlobalButtonStatus(bool isEnabled);
+    void sendWedgeIconsStatus(bool isEnabled);
+    void sendWedgeIconsPresses(bool isEnabled);
+    void sendStatusSlider(bool isEnabled);
 
     inline void setClientState(ClientState* state) {clientState = state;}
     inline ClientState* getClientState() {return clientState;}

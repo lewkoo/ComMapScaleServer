@@ -245,3 +245,43 @@ void TcpServer::setWedgeEnabled(bool isEnabled, bool objWedgeEnabled)
     }
 }
 
+void TcpServer::setGlobalButtonEnabled(bool isEnabled){
+    if (clientList != NULL)
+    {
+        for (int i = 0; i < this->clientList->count(); i++)
+        {
+            clientList->at(i)->sendGlobalButtonStatus(isEnabled);
+        }
+    }
+}
+
+void TcpServer::setWedgeIcons(bool isEnabled){
+    if (clientList != NULL)
+    {
+        for (int i = 0; i < this->clientList->count(); i++)
+        {
+            clientList->at(i)->sendWedgeIconsStatus(isEnabled);
+        }
+    }
+}
+
+void TcpServer::setWedgeIconPresses(bool isEnabled){
+    if (clientList != NULL)
+    {
+        for (int i = 0; i < this->clientList->count(); i++)
+        {
+            clientList->at(i)->sendWedgeIconsPresses(isEnabled);
+        }
+    }
+}
+
+void TcpServer::setStatusSlider(bool isEnabled){
+    if (clientList != NULL)
+    {
+        for (int i = 0; i < this->clientList->count(); i++)
+        {
+            clientList->at(i)->sendStatusSlider(isEnabled);
+        }
+    }
+}
+

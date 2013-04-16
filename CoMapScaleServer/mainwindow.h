@@ -32,6 +32,10 @@ private slots:
     void wedgeStateChanged(int state);
     void objWedgeStateChanged(int state);
     void vwStateChanged(int state);
+    void globalButtonStateChanged(int state);
+    void wedgeIconsStateChanged(int state);
+    void wedgeIconPressesStateChanged(int state);
+    void statusSliderStateChanged(int state);
     void closeWindow();
 
 private:

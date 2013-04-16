@@ -338,3 +338,62 @@ void ClientConnection::sendWedgeStatus(bool isEnabled, bool objWedgeEnabled)
 
     sendMessage(text);
 }
+
+void ClientConnection::sendGlobalButtonStatus(bool isEnabled){
+    QString text;
+
+    if(isEnabled){
+        text = tr("global");
+    }
+    else
+    {
+        text = tr("noglobal");
+    }
+
+    sendMessage(text);
+}
+
+void ClientConnection::sendWedgeIconsStatus(bool isEnabled){
+    QString text;
+
+    if(isEnabled){
+        text = tr("iconswedge");
+    }
+    else
+    {
+        text = tr("noiconswedge");
+    }
+
+    sendMessage(text);
+}
+
+void ClientConnection::sendWedgeIconsPresses(bool isEnabled){
+    QString text;
+
+    if(isEnabled){
+        text = tr("presseswedge");
+    }
+    else
+    {
+        text = tr("nopresseswedge");
+    }
+
+    sendMessage(text);
+}
+
+void ClientConnection::sendStatusSlider(bool isEnabled){
+    QString text;
+
+    if(isEnabled){
+        text = tr("statusslider");
+    }
+    else
+    {
+        text = tr("nostatusslider");
+    }
+
+    sendMessage(text);
+}
+
+
+

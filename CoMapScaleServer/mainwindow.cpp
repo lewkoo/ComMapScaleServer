@@ -27,6 +27,10 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->chkWedge, SIGNAL(stateChanged(int)), this, SLOT(wedgeStateChanged(int)));
     connect(ui->chkObjWedge, SIGNAL(stateChanged(int)), this, SLOT(objWedgeStateChanged(int)));
     connect(ui->chkVw, SIGNAL(stateChanged(int)), this, SLOT(vwStateChanged(int)));
+    connect(ui->chkGlobalBtn, SIGNAL(stateChanged(int)), this, SLOT(globalButtonStateChanged(int)));
+    connect(ui->chkWedgeIcon, SIGNAL(stateChanged(int)), this, SLOT(wedgeIconsStateChanged(int)));
+    connect(ui->chkStatusSlider, SIGNAL(stateChanged(int)), this, SLOT(statusSliderStateChanged(int)));
+    connect(ui->chkWedgePresses, SIGNAL(stateChanged(int)), this, SLOT(wedgeIconPressesStateChanged(int)));
 }
 
 MainWindow::~MainWindow()
@@ -53,6 +57,10 @@ void MainWindow::startServer()
     ui->chkWedge->setEnabled(true);
     ui->chkObjWedge->setEnabled(ui->chkWedge->checkState());
     ui->chkVw->setEnabled(true);
+    ui->chkGlobalBtn->setEnabled(true);
+    ui->chkWedgeIcon->setEnabled(true);
+    ui->chkWedgePresses->setEnabled(true);
+    ui->chkStatusSlider->setEnabled(true);
 
     //Give map widget a handle to client data
     if (mapWidget != NULL)
@@ -147,11 +155,17 @@ void MainWindow::wedgeStateChanged(int state)
     if (state == Qt::Checked)
     {
         ui->chkObjWedge->setEnabled(true);
+        ui->chkWedgePresses->setEnabled(true);
+        ui->chkWedgeIcon->setEnabled(true);
     }
     else if (state == Qt::Unchecked)
     {
         ui->chkObjWedge->setChecked(false);
         ui->chkObjWedge->setEnabled(false);
+        ui->chkWedgePresses->setChecked(false);
+        ui->chkWedgePresses->setEnabled(false);
+        ui->chkWedgeIcon->setChecked(false);
+        ui->chkWedgeIcon->setEnabled(false);
     }
 
     server->setWedgeEnabled(ui->chkWedge->checkState(), ui->chkObjWedge->checkState());
@@ -160,6 +174,43 @@ void MainWindow::wedgeStateChanged(int state)
 void MainWindow::objWedgeStateChanged(int state)
 {
     server->setWedgeEnabled(ui->chkWedge->checkState(), ui->chkObjWedge->checkState());
+}
+
+void MainWindow::globalButtonStateChanged(int state){
+    if(state == Qt::Checked)
+    {
+        server->setGlobalButtonEnabled(true);
+    }else if(state == Qt::Unchecked){
+        server->setGlobalButtonEnabled(false);
+    }
+}
+
+void MainWindow::wedgeIconsStateChanged(int state){
+    if(state == Qt::Checked)
+    {
+        server->setWedgeIcons(true);
+        ui->chkWedgePresses->setEnabled(true);
+    }else if(state == Qt::Unchecked){
+        server->setWedgeIcons(false);
+        ui->chkWedgePresses->setEnabled(false);
+        ui->chkWedgePresses->setChecked(false);
+    }
+}
+
+void MainWindow::wedgeIconPressesStateChanged(int state){
+    if(state == Qt::Checked){
+        server->setWedgeIconPresses(true);
+    }else if(state == Qt::Unchecked){
+        server->setWedgeIconPresses(false);
+    }
+}
+
+void MainWindow::statusSliderStateChanged(int state){
+    if(state == Qt::Checked){
+        server->setStatusSlider(true);
+    }else if(state == Qt::Unchecked){
+        server->setStatusSlider(false);
+    }
 }
 
 void MainWindow::closeWindow(){

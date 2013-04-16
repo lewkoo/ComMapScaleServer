@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Fri Mar 29 13:08:42 2013
+** Created: Mon Apr 15 22:36:16 2013
 **      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -39,6 +39,10 @@ public:
     QCheckBox *chkWedge;
     QCheckBox *chkVw;
     QCheckBox *chkObjWedge;
+    QCheckBox *chkGlobalBtn;
+    QCheckBox *chkWedgeIcon;
+    QCheckBox *chkWedgePresses;
+    QCheckBox *chkStatusSlider;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -64,10 +68,10 @@ public:
         btnQuit->setGeometry(QRect(10, 430, 91, 24));
         btnLoad = new QPushButton(centralWidget);
         btnLoad->setObjectName(QString::fromUtf8("btnLoad"));
-        btnLoad->setGeometry(QRect(10, 290, 91, 24));
+        btnLoad->setGeometry(QRect(10, 390, 91, 24));
         btnClear = new QPushButton(centralWidget);
         btnClear->setObjectName(QString::fromUtf8("btnClear"));
-        btnClear->setGeometry(QRect(10, 260, 91, 24));
+        btnClear->setGeometry(QRect(10, 360, 91, 24));
         chkWedge = new QCheckBox(centralWidget);
         chkWedge->setObjectName(QString::fromUtf8("chkWedge"));
         chkWedge->setEnabled(false);
@@ -82,7 +86,27 @@ public:
         chkObjWedge = new QCheckBox(centralWidget);
         chkObjWedge->setObjectName(QString::fromUtf8("chkObjWedge"));
         chkObjWedge->setEnabled(false);
-        chkObjWedge->setGeometry(QRect(10, 230, 121, 21));
+        chkObjWedge->setGeometry(QRect(10, 340, 121, 21));
+        chkGlobalBtn = new QCheckBox(centralWidget);
+        chkGlobalBtn->setObjectName(QString::fromUtf8("chkGlobalBtn"));
+        chkGlobalBtn->setEnabled(false);
+        chkGlobalBtn->setGeometry(QRect(10, 230, 91, 17));
+        chkGlobalBtn->setChecked(true);
+        chkWedgeIcon = new QCheckBox(centralWidget);
+        chkWedgeIcon->setObjectName(QString::fromUtf8("chkWedgeIcon"));
+        chkWedgeIcon->setEnabled(false);
+        chkWedgeIcon->setGeometry(QRect(10, 260, 91, 17));
+        chkWedgeIcon->setChecked(true);
+        chkWedgePresses = new QCheckBox(centralWidget);
+        chkWedgePresses->setObjectName(QString::fromUtf8("chkWedgePresses"));
+        chkWedgePresses->setEnabled(false);
+        chkWedgePresses->setGeometry(QRect(10, 290, 121, 17));
+        chkWedgePresses->setChecked(true);
+        chkStatusSlider = new QCheckBox(centralWidget);
+        chkStatusSlider->setObjectName(QString::fromUtf8("chkStatusSlider"));
+        chkStatusSlider->setEnabled(false);
+        chkStatusSlider->setGeometry(QRect(10, 320, 111, 17));
+        chkStatusSlider->setChecked(true);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -112,6 +136,10 @@ public:
         chkWedge->setText(QApplication::translate("MainWindow", "Wedge", 0, QApplication::UnicodeUTF8));
         chkVw->setText(QApplication::translate("MainWindow", "Visit Wear", 0, QApplication::UnicodeUTF8));
         chkObjWedge->setText(QApplication::translate("MainWindow", "Object Wedges", 0, QApplication::UnicodeUTF8));
+        chkGlobalBtn->setText(QApplication::translate("MainWindow", "Global Button", 0, QApplication::UnicodeUTF8));
+        chkWedgeIcon->setText(QApplication::translate("MainWindow", "Wedge Icons", 0, QApplication::UnicodeUTF8));
+        chkWedgePresses->setText(QApplication::translate("MainWindow", "Wedge Interactivity", 0, QApplication::UnicodeUTF8));
+        chkStatusSlider->setText(QApplication::translate("MainWindow", "Slider Status", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
