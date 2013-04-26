@@ -31,7 +31,7 @@ void DataLogger::createFiles()
    //QDir::setCurrent("\\" + DataLogger::LOG_PATH);
 
     //Create file to log positions
-    fileName = folder.path() + "\\Pos_Log-Client_" + clientId + "_" + QDateTime::currentDateTime().toString() + ".txt";
+    fileName = folder.path() + "\\Pos" + clientId + "_" + QDateTime::currentDateTime().toString() + ".txt";
     fileName.replace(QChar(':'), QChar(' '), Qt::CaseInsensitive); //Windows does not support : in file name
     posFile.setFileName(fileName);
 
