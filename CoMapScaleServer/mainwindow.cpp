@@ -220,3 +220,11 @@ void MainWindow::closeWindow(){
 
 }
 
+bool MainWindow::getGlobalButtonSwitchState(){
+    return ui->chkGlobalBtn->isChecked();
+}
+
+bool MainWindow::getSliderStatusSwitchState(){
+    return ui->chkStatusSlider->isChecked();
+}
+

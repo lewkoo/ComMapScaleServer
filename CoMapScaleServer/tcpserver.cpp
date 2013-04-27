@@ -2,14 +2,16 @@
 #include <tcpserver.h>
 #include <clientconnection.h>
 #include "clientstate.h"
+#include "mainwindow.h"
 
 const int TcpServer::MAX_CLIENTS = 2;
 int TcpServer::clientIdCounter = 0;
 
-TcpServer::TcpServer(MappingWidget* mapWidget, QObject *parent)
+TcpServer::TcpServer(MappingWidget* mapWidget, MainWindow *parent)
   : QTcpServer(parent)
 {
     this->mapWidget = mapWidget;
+    this->parent = parent;
     clientList = new QList<ClientConnection*>;
     connect (this, SIGNAL(newConnection()), this, SLOT(connectClient()));
     vwEnabled = true;
@@ -91,6 +93,10 @@ void TcpServer::connectClient()
         QList<QGeoMapObject*> mapObjects = mapWidget->getMapObjects();
         clientConnection->sendMapObjects(mapObjects);
         clientConnection->sendWedgeStatus(this->wedgeEnabled, this->objWedgeEnabled);
+        clientConnection->sendGlobalButtonStatus(parent->getGlobalButtonSwitchState());
+        clientConnection->sendStatusSlider(parent->getSliderStatusSwitchState());
+
+        qDebug()<<parent->getSliderStatusSwitchState();
 
         connect(clientConnection, SIGNAL(requestRepaint()), mapWidget, SLOT(update()));
         connect(clientConnection, SIGNAL(clientStateChanged(QString)), this, SLOT(updateClients(QString)));

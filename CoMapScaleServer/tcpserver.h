@@ -9,6 +9,7 @@
 QTM_USE_NAMESPACE
 
 class ClientConnection;
+class MainWindow;
 
 class TcpServer: public QTcpServer
 {
@@ -19,7 +20,7 @@ public:
     static int clientIdCounter;
 
 public:
-    TcpServer(MappingWidget* mapWidget, QObject *parent = 0);
+    TcpServer(MappingWidget* mapWidget, MainWindow *parent = 0);
     ~TcpServer();
 
     QList<ClientConnection*>* getClientList();
@@ -41,6 +42,7 @@ private slots:
 private:
     QList<ClientConnection*>* clientList;
     MappingWidget* mapWidget;
+    MainWindow* parent;
     bool vwEnabled;
     bool wedgeEnabled;
     bool objWedgeEnabled;

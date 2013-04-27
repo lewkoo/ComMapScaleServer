@@ -28,7 +28,7 @@ void DataLogger::createFiles()
         }
     }
 
-   //QDir::setCurrent("\\" + DataLogger::LOG_PATH);
+   QDir::setCurrent("\\" + DataLogger::LOG_PATH);
 
     //Create file to log positions
     fileName = folder.path() + "\\Pos" + clientId + "_" + QDateTime::currentDateTime().toString() + ".txt";
@@ -102,4 +102,8 @@ void DataLogger::closeFiles()
     vwFileOut.flush();
     vwFile.flush();
     vwFile.close();
+
+    clickFileOut.flush();
+    clickFile.flush();
+    clickFile.close();
 }

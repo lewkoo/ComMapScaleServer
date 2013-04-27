@@ -20,6 +20,9 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    bool getGlobalButtonSwitchState();
+    bool getSliderStatusSwitchState();
+
     void addMapWidget(MappingWidget* mapWidget);
     inline MappingWidget* getMapWidget() {return this->mapWidget;}
 
