@@ -61,6 +61,7 @@ void MainWindow::startServer()
     ui->chkWedgeIcon->setEnabled(true);
     ui->chkWedgePresses->setEnabled(true);
     ui->chkStatusSlider->setEnabled(true);
+    ui->checkBox->setEnabled(true);
 
     //Give map widget a handle to client data
     if (mapWidget != NULL)
@@ -226,5 +227,9 @@ bool MainWindow::getGlobalButtonSwitchState(){
 
 bool MainWindow::getSliderStatusSwitchState(){
     return ui->chkStatusSlider->isChecked();
+}
+
+bool MainWindow::getSliderStatusInteractivitySwitchState(){
+    return ui->checkBox->isChecked();
 }
 

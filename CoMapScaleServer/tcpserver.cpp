@@ -95,8 +95,10 @@ void TcpServer::connectClient()
         clientConnection->sendWedgeStatus(this->wedgeEnabled, this->objWedgeEnabled);
         clientConnection->sendGlobalButtonStatus(parent->getGlobalButtonSwitchState());
         clientConnection->sendStatusSlider(parent->getSliderStatusSwitchState());
+        clientConnection->sendStatusSliderInteractivity(parent->getSliderStatusInteractivitySwitchState());
 
-        qDebug()<<parent->getSliderStatusSwitchState();
+
+        qDebug()<<parent->getSliderStatusInteractivitySwitchState();
 
         connect(clientConnection, SIGNAL(requestRepaint()), mapWidget, SLOT(update()));
         connect(clientConnection, SIGNAL(clientStateChanged(QString)), this, SLOT(updateClients(QString)));

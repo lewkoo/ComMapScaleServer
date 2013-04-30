@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Mon Apr 15 22:36:16 2013
+** Created: Mon Apr 29 21:19:19 2013
 **      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -43,6 +43,7 @@ public:
     QCheckBox *chkWedgeIcon;
     QCheckBox *chkWedgePresses;
     QCheckBox *chkStatusSlider;
+    QCheckBox *chkSliderInteract;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -51,7 +52,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(825, 506);
+        MainWindow->resize(825, 520);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         btnConnect = new QPushButton(centralWidget);
@@ -65,13 +66,13 @@ public:
         btnDisconnect->setGeometry(QRect(10, 40, 91, 24));
         btnQuit = new QPushButton(centralWidget);
         btnQuit->setObjectName(QString::fromUtf8("btnQuit"));
-        btnQuit->setGeometry(QRect(10, 430, 91, 24));
+        btnQuit->setGeometry(QRect(10, 440, 91, 24));
         btnLoad = new QPushButton(centralWidget);
         btnLoad->setObjectName(QString::fromUtf8("btnLoad"));
-        btnLoad->setGeometry(QRect(10, 390, 91, 24));
+        btnLoad->setGeometry(QRect(10, 410, 91, 24));
         btnClear = new QPushButton(centralWidget);
         btnClear->setObjectName(QString::fromUtf8("btnClear"));
-        btnClear->setGeometry(QRect(10, 360, 91, 24));
+        btnClear->setGeometry(QRect(10, 380, 91, 24));
         chkWedge = new QCheckBox(centralWidget);
         chkWedge->setObjectName(QString::fromUtf8("chkWedge"));
         chkWedge->setEnabled(false);
@@ -86,7 +87,7 @@ public:
         chkObjWedge = new QCheckBox(centralWidget);
         chkObjWedge->setObjectName(QString::fromUtf8("chkObjWedge"));
         chkObjWedge->setEnabled(false);
-        chkObjWedge->setGeometry(QRect(10, 340, 121, 21));
+        chkObjWedge->setGeometry(QRect(10, 360, 121, 21));
         chkGlobalBtn = new QCheckBox(centralWidget);
         chkGlobalBtn->setObjectName(QString::fromUtf8("chkGlobalBtn"));
         chkGlobalBtn->setEnabled(false);
@@ -107,6 +108,11 @@ public:
         chkStatusSlider->setEnabled(false);
         chkStatusSlider->setGeometry(QRect(10, 320, 111, 17));
         chkStatusSlider->setChecked(true);
+        chkSliderInteract = new QCheckBox(centralWidget);
+        chkSliderInteract->setObjectName(QString::fromUtf8("chkSliderInteract"));
+        chkSliderInteract->setEnabled(false);
+        chkSliderInteract->setGeometry(QRect(10, 340, 111, 17));
+        chkSliderInteract->setChecked(true);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -140,6 +146,7 @@ public:
         chkWedgeIcon->setText(QApplication::translate("MainWindow", "Wedge Icons", 0, QApplication::UnicodeUTF8));
         chkWedgePresses->setText(QApplication::translate("MainWindow", "Wedge Interactivity", 0, QApplication::UnicodeUTF8));
         chkStatusSlider->setText(QApplication::translate("MainWindow", "Slider Status", 0, QApplication::UnicodeUTF8));
+        chkSliderInteract->setText(QApplication::translate("MainWindow", "Slider Interactivity", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

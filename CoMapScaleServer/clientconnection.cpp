@@ -396,5 +396,20 @@ void ClientConnection::sendStatusSlider(bool isEnabled){
     sendMessage(text);
 }
 
+void ClientConnection::sendStatusSliderInteractivity(bool isEnabled){
+    QString text;
+
+    if(isEnabled){
+        text = tr("interactivitystatusslider");
+    }
+    else
+    {
+        text = tr("interactivitynostatusslider");
+    }
+
+    sendMessage(text);
+}
+
+
 
 

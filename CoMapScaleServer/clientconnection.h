@@ -32,6 +32,7 @@ public:
     void sendWedgeIconsStatus(bool isEnabled);
     void sendWedgeIconsPresses(bool isEnabled);
     void sendStatusSlider(bool isEnabled);
+    void sendStatusSliderInteractivity(bool isEnabled);
 
     inline void setClientState(ClientState* state) {clientState = state;}
     inline ClientState* getClientState() {return clientState;}
