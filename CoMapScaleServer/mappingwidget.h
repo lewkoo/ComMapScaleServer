@@ -46,6 +46,7 @@ signals:
 public slots:
     void initialize (QGeoMappingManager* mapManager);
 
+
 private:
     GeoMap* map;
     QGraphicsView* view;

@@ -229,6 +229,8 @@ void ClientConnection::parseMessage(QString message)
         if(clickInfo != NULL && (lat != 0 || lon != 0 || scale != 0)){
             logger->writeClick(time.toString("hh:mm:ss.zzz"), QString::number(lat), QString::number(lon), QString::number(topLeftLat), QString::number(topLeftLon),
                                QString::number(botRightLat), QString::number(botRightLon), QString::number(scale),clickInfo);
+
+            displayClick(clickInfo);
         }
 
 
@@ -408,6 +410,10 @@ void ClientConnection::sendStatusSliderInteractivity(bool isEnabled){
     }
 
     sendMessage(text);
+}
+
+void ClientConnection::displayClick(QString toDisplay){
+    emit clientClick(toDisplay);
 }
 
 

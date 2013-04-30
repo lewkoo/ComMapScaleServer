@@ -9,6 +9,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "mappingwidget.h"
+#include "clientconnection.h"
 
 const QString MainWindow::NOT_CONNECTED_TEXT = QString("Not Connected");
 
@@ -68,6 +69,9 @@ void MainWindow::startServer()
     {
         mapWidget->setClientList(server->getClientList());
     }
+
+    //Subscribe to a signal in client list to handle display of clicks
+
 
     if (!server->listen(QHostAddress::Any, 50000))
     {
@@ -231,5 +235,9 @@ bool MainWindow::getSliderStatusSwitchState(){
 
 bool MainWindow::getSliderStatusInteractivitySwitchState(){
     return ui->checkBox->isChecked();
+}
+
+void MainWindow::displayClick(QString clickData){
+    qDebug() << clickData;
 }
 

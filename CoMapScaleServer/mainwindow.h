@@ -41,6 +41,7 @@ private slots:
     void wedgeIconPressesStateChanged(int state);
     void statusSliderStateChanged(int state);
     void closeWindow();
+    void displayClick(QString clickData);
 
 private:
     Ui::MainWindow *ui;

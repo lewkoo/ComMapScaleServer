@@ -101,6 +101,7 @@ void TcpServer::connectClient()
         qDebug()<<parent->getSliderStatusInteractivitySwitchState();
 
         connect(clientConnection, SIGNAL(requestRepaint()), mapWidget, SLOT(update()));
+        connect(clientConnection,SIGNAL(clientClick(QString)),parent,SLOT(displayClick(QString)));
         connect(clientConnection, SIGNAL(clientStateChanged(QString)), this, SLOT(updateClients(QString)));
     }
     else
@@ -292,4 +293,3 @@ void TcpServer::setStatusSlider(bool isEnabled){
         }
     }
 }
-

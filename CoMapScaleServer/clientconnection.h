@@ -41,6 +41,7 @@ public:
 signals:
     void requestRepaint();
     void clientStateChanged(QString clientId);
+    void clientClick(QString clickData);
 
 private slots:
     void inDataReady();
@@ -56,6 +57,7 @@ private:
     QString clientId;
     DataLogger* logger;
     //vector<QPointF> locHist; //Location history. Stack of coordinates.
+    void displayClick(QString toDisplay);
 };
 
 #endif // CLIENTCONNECTION_H
