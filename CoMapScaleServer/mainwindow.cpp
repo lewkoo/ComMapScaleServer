@@ -241,6 +241,16 @@ bool MainWindow::getSliderStatusInteractivitySwitchState(){
     return ui->checkBox->isChecked();
 }
 
+bool MainWindow::getWedgeInteractivity(){
+    return ui->chkWedgePresses->isChecked();
+}
+
+bool MainWindow::getWedgeIconsState(){
+    return ui->chkWedgeIcon->isChecked();
+}
+
+
+
 void MainWindow::displayClick(QString clickData){
     qDebug() << clickData;
     clicks->show();

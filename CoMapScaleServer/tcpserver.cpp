@@ -93,6 +93,8 @@ void TcpServer::connectClient()
         QList<QGeoMapObject*> mapObjects = mapWidget->getMapObjects();
         clientConnection->sendMapObjects(mapObjects);
         clientConnection->sendWedgeStatus(this->wedgeEnabled, this->objWedgeEnabled);
+        clientConnection->sendWedgeIconsStatus(parent->getWedgeIconsState());
+        clientConnection->sendWedgeIconsPresses(parent->getWedgeInteractivity());
         clientConnection->sendGlobalButtonStatus(parent->getGlobalButtonSwitchState());
         clientConnection->sendStatusSlider(parent->getSliderStatusSwitchState());
         clientConnection->sendStatusSliderInteractivity(parent->getSliderStatusInteractivitySwitchState());

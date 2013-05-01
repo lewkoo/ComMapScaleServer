@@ -225,7 +225,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QCheckBox" name="chkSliderInteract">
+   <widget class="QCheckBox" name="checkBox">
     <property name="enabled">
      <bool>false</bool>
     </property>

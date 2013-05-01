@@ -25,6 +25,8 @@ public:
     bool getGlobalButtonSwitchState();
     bool getSliderStatusSwitchState();
     bool getSliderStatusInteractivitySwitchState();
+    bool getWedgeInteractivity();
+    bool getWedgeIconsState();
 
     void addMapWidget(MappingWidget* mapWidget);
     inline MappingWidget* getMapWidget() {return this->mapWidget;}

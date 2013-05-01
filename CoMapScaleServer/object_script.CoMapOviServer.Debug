@@ -10,10 +10,12 @@ INPUT(
 ./debug\zoombuttonitem.o
 ./debug\clientstate.o
 ./debug\datalogger.o
+./debug\clickwindow.o
 ./debug\moc_mainwindow.o
 ./debug\moc_tcpserver.o
 ./debug\moc_clientconnection.o
 ./debug\moc_mappingwidget.o
 ./debug\moc_geomap.o
+./debug\moc_clickwindow.o
 ./debug\qrc_Icons.o
 );
