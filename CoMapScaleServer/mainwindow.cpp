@@ -10,6 +10,7 @@
 #include "ui_mainwindow.h"
 #include "mappingwidget.h"
 #include "clientconnection.h"
+#include "clickwindow.h"
 
 const QString MainWindow::NOT_CONNECTED_TEXT = QString("Not Connected");
 
@@ -19,6 +20,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     server = NULL;
+
+    clicks = new ClickWindow();
 
     connect(ui->btnConnect, SIGNAL(clicked()), this, SLOT(startServer()));
     connect(ui->btnDisconnect, SIGNAL(clicked()), this, SLOT(stopServer()));
@@ -221,6 +224,7 @@ void MainWindow::statusSliderStateChanged(int state){
 void MainWindow::closeWindow(){
 
     stopServer();
+    clicks->close();
     close();
 
 }
@@ -239,5 +243,17 @@ bool MainWindow::getSliderStatusInteractivitySwitchState(){
 
 void MainWindow::displayClick(QString clickData){
     qDebug() << clickData;
+    clicks->show();
+
+    //set up window
+    if(clickData == "GlobalButton"){
+        clicks->showGlobBut();
+    }else if(clickData == "SliderButton"){
+        clicks->showScaleBut();
+    }else if(clickData == "WedgePeerRedType" || clickData == "WedgePeerBlueType"){
+        clicks->showWedgeBut();
+    }else{
+        //unrecognized message; ignore
+    }
 }
 

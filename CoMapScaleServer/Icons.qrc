@@ -13,5 +13,7 @@
         <file alias="anchorRed">Icons/anchorRed.png</file>
         <file alias="peerRed">Icons/peerRed.png</file>
         <file alias="peerBlue">Icons/peerBlue.png</file>
+        <file alias="globalButton">Icons/globalButton.png</file>
+        <file alias="scaleButton">Icons/scaleMark.png</file>
     </qresource>
 </RCC>

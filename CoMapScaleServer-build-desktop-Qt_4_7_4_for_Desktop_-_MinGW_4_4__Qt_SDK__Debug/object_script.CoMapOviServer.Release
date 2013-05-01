@@ -10,10 +10,12 @@ INPUT(
 ./release\zoombuttonitem.o
 ./release\clientstate.o
 ./release\datalogger.o
+./release\clickwindow.o
 ./release\moc_mainwindow.o
 ./release\moc_tcpserver.o
 ./release\moc_clientconnection.o
 ./release\moc_mappingwidget.o
 ./release\moc_geomap.o
+./release\moc_clickwindow.o
 ./release\qrc_Icons.o
 );

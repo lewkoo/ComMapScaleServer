@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include "tcpserver.h"
 
+
+class ClickWindow;
 class MappingWidget;
 
 namespace Ui {
@@ -47,6 +49,7 @@ private:
     Ui::MainWindow *ui;
     TcpServer* server;
     MappingWidget* mapWidget;
+    ClickWindow* clicks;
 };
 
 #endif // MAINWINDOW_H

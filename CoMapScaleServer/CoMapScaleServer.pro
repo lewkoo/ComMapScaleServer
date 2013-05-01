@@ -32,7 +32,8 @@ SOURCES += main.cpp\
     geomap.cpp \
     zoombuttonitem.cpp \
     clientstate.cpp \
-    datalogger.cpp
+    datalogger.cpp \
+    clickwindow.cpp
 
 HEADERS  += mainwindow.h \
     tcpserver.h \
@@ -43,9 +44,11 @@ HEADERS  += mainwindow.h \
     geomap.h \
     zoombuttonitem.h \
     clientstate.h \
-    datalogger.h
+    datalogger.h \
+    clickwindow.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    clickwindow.ui
 
 OTHER_FILES += \
     qtc_packaging/debian_fremantle/rules \
